@@ -1,0 +1,250 @@
+:root {
+  --primary-color: #5b25f5;
+  --secondary-color: #9792c7;
+  --secondary-color-with-opacity: #bab4e21f;
+  --background-color: #f5f5fd;
+  --background-color-hover: #e5e5ec;
+  --text: #9792c7;
+  --white: #fff;
+  --black: #000;
+
+  --space-xs: 0.25rem;
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 2rem;
+  --space-xl: 4rem;
+
+  --font-xs: 0.25rem;
+  --font-s: 0.5rem;
+  --font-m: 1rem;
+  --font-l: 1.5rem;
+  --font-xl: 2rem;
+
+  --width-logo: 3rem;
+  --width-nav-link-icon: 1.5rem;
+  --header-height: 6.25rem;
+  --nav-width: 25rem;
+  --html-font-size: 16px;
+
+  --document-image-margin-bottom: -90px;
+  --report-container-padding-top: 90px;
+
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  font-size: var(--html-font-size);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+body {
+  font-family: var(--font-family);
+  display: flex;
+  margin: 0;
+  height: 100vh;
+}
+.nav {
+  width: var(--nav-width);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  padding: var(--space-m);
+}
+
+.nav-logo .icon {
+  width: var(--width-logo);
+  height: var(--width-logo);
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: var(--space-m);
+  padding: var(--space-s);
+  margin-right: var(--space-m);
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  color: var(--text);
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  padding: var(--space-m) var(--space-m);
+}
+
+.nav-links a.active {
+  color: var(--primary-color);
+}
+
+.nav-links a:hover {
+  background-color: var(--background-color-hover);
+}
+
+.nav-links a .icon {
+  width: var(--width-nav-link-icon);
+  height: var(--width-nav-link-icon);
+  margin-right: var(--space-m);
+}
+
+.nav-document {
+  margin: var(--space-m);
+}
+
+.nav-document .image {
+  width: 100%;
+  padding: var(--space-m);
+  display: relative;
+  margin-bottom: var(--document-image-margin-bottom);
+}
+
+.report-container {
+  display: flex;
+  flex-direction: column;
+  background: var(--background-color);
+  padding: var(--space-m);
+  border-radius: var(--space-l);
+  padding-top: var(--report-container-padding-top);
+}
+
+.report-container .title {
+  font-size: var(--font-l);
+  font-weight: 600;
+}
+
+.report-container .description {
+  font-size: var(--font-m);
+  color: var(--text);
+  margin-top: var(--space-xs);
+}
+
+.report-container .btn {
+  margin-top: var(--space-m);
+  background: none;
+  border: none;
+  background-color: var(--primary-color);
+  padding: var(--space-m) var(--space-l);
+  color: var(--white);
+  border-radius: var(--space-m);
+}
+
+.remaining {
+  width: 100%;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  margin: var(--space-m);
+  padding: var(--space-l);
+  border-radius: var(--space-m);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-m) 0;
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+}
+
+.header-search .icon {
+  color: var(--text);
+  margin-right: var(--space-s);
+}
+
+.header-search input {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: var(--font-m);
+  font-family: var(--font-family);
+  outline: none;
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+}
+
+.change-view {
+  display: flex;
+  align-items: center;
+  padding: var(--space-m);
+  border: 2px solid var(--background-color-hover);
+  border-radius: var(--space-m);
+  margin-right: var(--space-m);
+}
+
+.header-notifications {
+  margin-right: var(--space-m);
+}
+
+@media screen and (max-width: 1024px) {
+  /* Laptop (1024px) */
+}
+
+@media screen and (max-width: 768px) {
+  /* Tablet (768px) */
+
+  .nav {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+  }
+
+  .remaining{
+      margin: 0;
+  }
+
+  .nav-links {
+      display: flex;
+  }
+
+  .nav-logo, .nav-document {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 635px) {
+    /* For bottom buttons resizing */
+    .nav-links {
+        justify-content: space-around;
+    }
+    .nav-links a {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav-links a .icon {
+        margin-right: 0;
+    }
+    .change-view {
+        padding: 0;
+        border: 0;
+    }
+    .change-view .text {
+        display: none;
+    }
+  }
+
+@media screen and (max-width: 320px) {
+  /* Phone (Small) */
+}
